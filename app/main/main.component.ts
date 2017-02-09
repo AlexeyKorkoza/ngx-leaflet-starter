@@ -8,7 +8,7 @@ declare var Icon: any;
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/component/Main/main.component.html',
+    templateUrl: 'app/component/main/main.component.html',
     styleUrls: ['app/css/style.css']
 })
 
@@ -31,13 +31,5 @@ export class MainComponent implements OnInit {
                 popupAnchor: [0, -30]
             }
         });
-    }
-
-    public types:Array<string> = ["Все объекты", "Аптека", "Клуб", "Магазин"];
-
-    private value:any = {};
-
-    public selected(value:any):void {
-        console.log('Selected value is: ', value);
     }
 }

@@ -1,22 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TypeService} from './service/type.service';
+import {Type} from  './model/type';
+import {Response} from "@angular/http";
 
 @Component({
-  selector: 'type',
-  templateUrl: 'app/type/type.component.html'
+    selector: 'type',
+    templateUrl: 'app/type/type.component.html',
+    providers: [TypeService]
 })
 
-export class TypeComponent {
+export class TypeComponent implements OnInit {
 
-  ngOnInit() {
+    types: Type[] ;
 
-  }
+    constructor(private typeService: TypeService) {
+    }
 
-  public types:Array<string> = ["Все объекты", "Аптека", "Клуб", "Магазин"];
+    ngOnInit() {
+        this.typeService.getData()
+            .subscribe(
+                types => this.types = types,
+                err => {
+                    console.log(err);
+                });
+    }
 
-  private value:any = {};
+    private value: any = {};
 
-  public selected(value:any):void {
+    public selected(value: any): void {
         console.log('Selected value is: ', value);
-  }
+    }
 
 }

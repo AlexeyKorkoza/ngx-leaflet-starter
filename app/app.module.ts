@@ -1,6 +1,7 @@
 import {NgModule}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {Routes, RouterModule} from '@angular/router';
+import {HttpModule}   from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {MapComponent} from './map/map.component';
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
         BrowserModule,
         RouterModule,
         TypeModule,
+        HttpModule,
         RouterModule.forRoot(appRoutes)
     ],
     declarations: [

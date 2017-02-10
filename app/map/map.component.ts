@@ -7,12 +7,11 @@ declare var L: any;
 declare var Icon: any;
 
 @Component({
-    selector: 'my-app',
-    templateUrl: 'app/component/main/main.component.html',
-    styleUrls: ['app/css/style.css']
+    selector: 'map',
+    templateUrl: 'app/map/map.component.html',
 })
 
-export class MainComponent implements OnInit {
+export class MapComponent implements OnInit {
 
     ngOnInit() {
         document.getElementById('init_map').innerHTML = "<div id='map'></div>";

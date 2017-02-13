@@ -4,7 +4,7 @@
   margin: 0;
 }
 
-body{
+body {
   overflow-y: hidden !important;
 }
 
@@ -14,26 +14,24 @@ body{
   box-shadow: 0 5px 5px rgba(176, 176, 176, 0.4);
   padding: 20px;
   position: absolute;
-  z-index: 2;
+  z-index: 10;
 }
 
 #map {
   width: 100%;
-}
-
-#init_map{
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  z-index: 2;
 }
 
 .leaflet-top {
   top: 90px !important;
 }
 
-.leaflet-routing-container {
-  display: none !important;
-}
-
 .leaflet-default-icon-path {
   background-image: url(https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/images/marker-icon.png) !important;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
 }

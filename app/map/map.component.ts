@@ -14,14 +14,17 @@ declare var Icon: any;
 export class MapComponent implements OnInit {
 
     ngOnInit() {
-        document.getElementById('init_map').innerHTML = "<div id='map'></div>";
-        document.getElementById("map").style.height = window.innerHeight + "px";
 
-        let map = L.map('map').setView([53.6834599, 23.8342648], 13);
-        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '',
-            maxZoom: 18
-        }).addTo(map);
+        let map = L.map("map", {
+            zoomControl: false,
+            center: L.latLng(53.6834599, 23.8342648),
+            zoom: 13,
+            minZoom: 4,
+            maxZoom: 19,
+            layers: [L.tileLayer("http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
+            })]
+        });
 
         let LeafIcon = L.Icon.extend({
             options: {
@@ -30,5 +33,7 @@ export class MapComponent implements OnInit {
                 popupAnchor: [0, -30]
             }
         });
+
+        L.control.zoom({position: "topright"}).addTo(map);
     }
 }

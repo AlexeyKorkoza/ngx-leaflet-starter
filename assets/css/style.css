@@ -35,3 +35,16 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.leaflet-control-attribution{
+  display: none !important;
+}
+
+.getDirectionBtn {
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+  background: green;
+  color: white;
+  border: none;
+}

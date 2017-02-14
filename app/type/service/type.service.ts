@@ -12,7 +12,7 @@ export class TypeService {
     constructor(private http: Http) {
     }
 
-    getData(): Observable<Type[]> {
+    getAllTypes(): Observable<Type[]> {
         return this.http.get('app/type/types.json')
             .map((resp: Response)=> {
                 let data = resp.json();

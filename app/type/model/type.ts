@@ -1,5 +1,5 @@
 export class Type {
     id_type: Number;
-    name: string;
+    name_type: string;
     marker_img: string;
 }

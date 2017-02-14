@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TypeService} from './service/type.service';
 import {Type} from  './model/type';
-import {Response} from "@angular/http";
 
 @Component({
     selector: 'type',
@@ -11,15 +10,17 @@ import {Response} from "@angular/http";
 
 export class TypeComponent implements OnInit {
 
-    types: Type[] ;
+    types: Type[];
 
     constructor(private typeService: TypeService) {
     }
 
     ngOnInit() {
-        this.typeService.getData()
+        this.typeService.getAllTypes()
             .subscribe(
-                types => this.types = types,
+                types => {
+                    this.types = types;
+                },
                 err => {
                     console.log(err);
                 });

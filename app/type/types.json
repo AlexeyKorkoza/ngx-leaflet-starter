@@ -2,22 +2,16 @@
   {
     "id_type": 1,
     "name_type": "Аптека",
-    "marker_img": "antivirus"
+    "marker_img": "Аптека"
   },
   {
     "id_type": 2,
     "name_type": "Клуб",
-    "marker_img": "club"
+    "marker_img": "Клуб"
   },
   {
     "id_type": 3,
     "name_type": "Магазин",
-    "marker_img": "shop"
-  },
-  {
-    "id_type": 4,
-    "name_type": "аптечка",
-    "marker_img": "аптечка",
-    "__v": 0
+    "marker_img": "Магазин"
   }
 ]

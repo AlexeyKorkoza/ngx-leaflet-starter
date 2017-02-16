@@ -89,6 +89,10 @@ place {
   color: white;
 }
 
+.from_places_to_main{
+  position: absolute;
+}
+
 @media (max-width: 992px) {
   place {
     width: 40%;

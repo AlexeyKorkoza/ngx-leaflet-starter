@@ -1,28 +1,28 @@
-import {NgModule}      from '@angular/core';
+import {NgModule, ModuleWithProviders}      from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule} from '@angular/router';
 import {HttpModule}   from '@angular/http';
 
 import {AppComponent} from './app.component';
-import {MapComponent} from './map/map.component';
 
 import {TypeModule} from './type/type.module';
+import {PlaceModule} from './place/place.module';
+import {MapModule} from './map/map.module'
 
-const appRoutes: Routes = [
-    {path: '', component: MapComponent}
-];
+const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: true });
 
 @NgModule({
     imports: [
         BrowserModule,
+        MapModule,
         RouterModule,
         TypeModule,
+        PlaceModule,
         HttpModule,
-        RouterModule.forRoot(appRoutes)
+        rootRouting
     ],
     declarations: [
-        AppComponent,
-        MapComponent
+        AppComponent
     ],
     bootstrap: [
         AppComponent

@@ -60,6 +60,7 @@ place {
   color: black;
   border: 1px solid rgb(66, 133, 244);
   overflow: hidden;
+  font: 1.3em 'Open Sans', sans-serif;
 }
 
 .place_card_location,

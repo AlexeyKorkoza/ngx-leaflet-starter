@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<div class="place_card">
+    <div class="place_card_container">
+        <div class="place_card_info">
+            <div class="place_card_name_place">
+                {{place.name_place}}
+            </div>
+        </div>
+        <div class="place_card_info">
+            <div class="place_card_description">
+                <img src="../../assets/img/Description.png"/>
+                {{place.description}}
+            </div>
+        </div>
+        <div class="place_card_info">
+            <div class=".place_card_location">
+                <img src="../../assets/img/Location.png"/>
+                {{place.coordinateX}}, {{place.coordinateY}}
+            </div>
+        </div>
+        <div class="place_card_info">
+            <div class="place_card_address">
+                <img src="../../assets/img/Home.png"/>
+                {{place.address}}
+            </div>
+        </div>
+    </div>
+</div>

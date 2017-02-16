@@ -1,11 +1,19 @@
+@media (max-width: 600px) {
+  place {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  place {
+    width: 40%;
+  }
+}
+
 * {
   padding: 0;
   box-sizing: border-box;
   margin: 0;
-}
-
-body {
-  overflow-y: hidden !important;
 }
 
 #select {
@@ -36,7 +44,7 @@ body {
   height: 100%;
 }
 
-.leaflet-control-attribution{
+.leaflet-control-attribution {
   display: none !important;
 }
 
@@ -47,4 +55,47 @@ body {
   background: green;
   color: white;
   border: none;
+}
+
+place-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+place {
+  margin: 30px;
+  width: 20%;
+}
+
+.place_card_container {
+  border-radius: 5px;
+  color: black;
+  border: 1px solid rgb(66, 133, 244);
+  overflow: hidden;
+}
+
+.place_card_location,
+.place_card_description,
+.place_card_address {
+  float: left;
+}
+
+.place_card_info {
+  clear: left;
+  padding: 10px 30px;
+  overflow: hidden;
+}
+
+.place_card_info:first-of-type {
+  background: rgb(66, 133, 244);
+}
+
+.place_card_header img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.place_card_name_place {
+  color: white;
 }

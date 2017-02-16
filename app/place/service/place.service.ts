@@ -12,7 +12,7 @@ export class PlaceService {
     constructor(private http: Http) {
     }
 
-    getData(): Observable<Place[]> {
+    getAllPlaces(): Observable<Place[]> {
         return this.http.get('app/place/places.json')
             .map((resp: Response)=> {
                 return resp.json();

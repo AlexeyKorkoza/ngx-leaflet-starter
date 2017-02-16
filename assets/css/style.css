@@ -1,15 +1,3 @@
-@media (max-width: 600px) {
-  place {
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  place {
-    width: 40%;
-  }
-}
-
 * {
   padding: 0;
   box-sizing: border-box;
@@ -98,4 +86,16 @@ place {
 
 .place_card_name_place {
   color: white;
+}
+
+@media (max-width: 992px) {
+  place {
+    width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  place {
+    width: 100%;
+  }
 }

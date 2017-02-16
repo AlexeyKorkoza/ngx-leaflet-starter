@@ -32,7 +32,49 @@ export class MapComponent implements OnInit {
     types: Type[];
 
     ngOnInit() {
+        this.createMap();
+        this.getTypes();
+        this.getPlaces();
+    }
 
+    addPlacesAtTheMap(places: Array<Place>) {
+        for (let i = 0; i < places.length; i++) {
+            let nameOfImage = this.types[+places[i].id_type - 1];
+            let typeOfPlace = this.types[+places[i].id_type - 1];
+            let id_place = places[i].id_place;
+            let iconPlace = new this.LeafIcon({iconUrl: "../../assets/img/" + nameOfImage + ".png"});
+            let marker = L.marker([places[i].coordinateX, places[i].coordinateY],
+                {icon: iconPlace}).bindPopup("<b>\"" + places[i].name_place + "\",</b> " + typeOfPlace + "<br>" +
+                places[i].address + "<br/>" + "<button class='getDirectionBtn' id=id_place_" + id_place + ">Проложить маршрут</button>").openPopup().addTo(this.map);
+            this.markers.addLayer(marker);
+        }
+        this.map.addLayer(this.markers);
+    }
+
+    getTypes() {
+        this.typeService.getAllTypes()
+            .subscribe(
+                types => {
+                    this.types = types;
+                },
+                err => {
+                    console.log(err);
+                });
+    }
+
+    getPlaces() {
+        this.placeService.getAllPlaces()
+            .subscribe(
+                places => {
+                    this.places = places;
+                    this.addPlacesAtTheMap(this.places);
+                },
+                err => {
+                    console.log(err);
+                });
+    }
+
+    createMap() {
         this.map = L.map("map", {
             zoomControl: false,
             center: L.latLng(53.6834599, 23.8342648),
@@ -53,38 +95,9 @@ export class MapComponent implements OnInit {
         });
 
         L.control.zoom({position: "topright"}).addTo(this.map);
-
-        this.typeService.getAllTypes()
-            .subscribe(
-                types => {
-                    this.types = types;
-                },
-                err => {
-                    console.log(err);
-                });
-
-        this.placeService.getData()
-            .subscribe(
-                places => {
-                    this.places = places;
-                    this.addPlacesAtTheMap(this.places);
-                },
-                err => {
-                    console.log(err);
-                });
     }
 
-    addPlacesAtTheMap(places: Array<Place>) {
-        for (let i = 0; i < places.length; i++) {
-            let nameOfImage = this.types[+places[i].id_type - 1];
-            let typeOfPlace = this.types[+places[i].id_type - 1];
-            let id_place = places[i].id_place;
-            let iconPlace = new this.LeafIcon({iconUrl: "../../assets/img/" + nameOfImage + ".png"});
-            let marker = L.marker([places[i].coordinateX, places[i].coordinateY],
-                {icon: iconPlace}).bindPopup("<b>\"" + places[i].name_place + "\",</b> " + typeOfPlace + "<br>" +
-                places[i].address + "<br/>" + "<button class='getDirectionBtn' id=id_place_" + id_place + ">Проложить маршрут</button>").openPopup().addTo(this.map);
-            this.markers.addLayer(marker);
-        }
-        this.map.addLayer(this.markers);
+    public selected(value: any): void {
+        console.log('Selected value is: ', value);
     }
 }

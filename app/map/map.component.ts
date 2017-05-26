@@ -43,7 +43,7 @@ export class MapComponent implements OnInit {
             let typeOfPlace = this.types[+places[i].id_type - 1];
             let id_place = places[i].id_place;
             let iconPlace = new this.LeafIcon({iconUrl: "../../assets/img/" + nameOfImage + ".png"});
-            let marker = L.marker([places[i].coordinateX, places[i].coordinateY],
+            let marker = L.marker([places[i].lat, places[i].lng],
                 {icon: iconPlace}).bindPopup("<b>\"" + places[i].name_place + "\",</b> " + typeOfPlace + "<br>" +
                 places[i].address + "<br/>" + "<button class='getDirectionBtn' id=id_place_" + id_place + ">Проложить маршрут</button>").openPopup().addTo(this.map);
             this.markers.addLayer(marker);

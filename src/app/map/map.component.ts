@@ -2,28 +2,29 @@ import {
     Component,
     OnInit
 } from '@angular/core';
-import {PlaceService} from '../place/service/place.service';
-import {Place} from '../place/model/place';
-import {TypeService} from '../type/service/type.service';
-import {Type} from "../type/model/type";
 
-declare var L: any;
-declare var Icon: any;
+import { PlaceService } from '../place/service/place.service';
+import { Place } from '../place/model/place';
+import { TypeService } from '../type/service/type.service';
+import { Type } from "../type/model/type";
+
+declare let L: any;
+declare let Icon: any;
 
 @Component({
     selector: 'map',
-    templateUrl: 'app/map/map.component.html',
+    templateUrl: 'map.component.html',
     providers: [
         PlaceService,
-        TypeService
+        TypeService,
     ]
 })
 
 export class MapComponent implements OnInit {
 
-    constructor(private placeService: PlaceService,
-                private typeService: TypeService) {
-    }
+    constructor(
+      private placeService: PlaceService,
+      private typeService: TypeService) {}
 
     private map;
     private markers = new L.FeatureGroup();

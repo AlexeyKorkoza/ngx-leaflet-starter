@@ -1,7 +1,7 @@
-import {NgModule, ModuleWithProviders}      from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
-import {HttpModule}   from '@angular/http';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import {AppComponent} from './app.component';
 
@@ -18,7 +18,7 @@ const rootRouting: ModuleWithProviders = RouterModule.forRoot([], { useHash: tru
         RouterModule,
         TypeModule,
         PlaceModule,
-        HttpModule,
+        HttpClientModule,
         rootRouting
     ],
     declarations: [

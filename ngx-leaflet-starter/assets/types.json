@@ -1,0 +1,17 @@
+[
+  {
+    "id_type": 1,
+    "name_type": "DrugStore",
+    "marker_img": "DrugStore"
+  },
+  {
+    "id_type": 2,
+    "name_type": "Club",
+    "marker_img": "Club"
+  },
+  {
+    "id_type": 3,
+    "name_type": "Store",
+    "marker_img": "Store"
+  }
+]

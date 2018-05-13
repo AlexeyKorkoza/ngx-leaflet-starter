@@ -15,7 +15,7 @@ export class TypeService {
     constructor(private http: HttpClient) {}
 
     getAllTypes(): Observable<Type[]> {
-        return this.http.get<Type[]>('app/type/types.json')
+        return this.http.get<Type[]>('./assets/types.json')
             .pipe(map(data => data));
     }
 }

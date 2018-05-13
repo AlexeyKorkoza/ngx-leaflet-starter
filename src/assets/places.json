@@ -210,8 +210,8 @@
     "id_place": 24,
     "name_place": "Clubik",
     "description": "grrggrgrg",
-    "lat": "53.688",
-    "lng": "23.8416",
+    "lat": 53.688,
+    "lng": 23.8416,
     "address": "rrggrrgrrgrg",
     "id_type": 2
   }

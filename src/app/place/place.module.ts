@@ -1,11 +1,11 @@
-import {CommonModule} from '@angular/common';
-import {NgModule, ModuleWithProviders} from '@angular/core';
-import {RouterModule} from "@angular/router";
+import { CommonModule } from '@angular/common';
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { RouterModule } from "@angular/router";
 
-import {PlaceComponent} from './place.component';
-import {PlaceListComponent} from './place.list.component';
+import { PlaceComponent } from './place.component';
+import { PlaceListComponent } from './place.list.component';
 
-import {PlaceService} from './service/place.service';
+import { PlaceService } from './service/place.service';
 
 const placeRouting: ModuleWithProviders = RouterModule.forChild([
     {

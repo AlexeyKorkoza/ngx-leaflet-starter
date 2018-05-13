@@ -1,10 +1,10 @@
-import {CommonModule} from '@angular/common';
-import {NgModule, ModuleWithProviders} from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import {TypeModule} from '../type/type.module'
+import { TypeModule } from '../type/type.module'
 
-import {MapComponent} from './map.component';
-import {RouterModule} from "@angular/router";
+import { MapComponent } from './map.component';
+import { RouterModule } from "@angular/router";
 
 const mapRouting: ModuleWithProviders = RouterModule.forChild([
     {

@@ -15,7 +15,7 @@ export class PlaceService {
     constructor(private http: HttpClient) {}
 
     getAllPlaces(): Observable<Place[]> {
-        return this.http.get<Place[]>('app/place/places.json')
+        return this.http.get<Place[]>('./assets/places.json')
           .pipe(map(data => data));
     }
 }

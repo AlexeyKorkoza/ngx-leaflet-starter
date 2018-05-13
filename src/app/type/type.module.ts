@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SelectModule }  from 'ng2-select';
 
 import { TypeComponent } from './type.component';
 
@@ -8,7 +7,6 @@ import { TypeComponent } from './type.component';
 
   imports: [
     CommonModule,
-    SelectModule
   ],
 
   declarations: [
